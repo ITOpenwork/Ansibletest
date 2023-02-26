@@ -1,0 +1,11 @@
+---
+
+- name: task webapp 
+  hosts: "{{ servers }}"
+  gather_facts: false
+  tasks:
+  - name: Run stop webapp
+    win_shell: C:\stop.ps1 >> C:\stop.txt
+    args:
+      executable: cmd
+      chdir: C:\
